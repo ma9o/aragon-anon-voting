@@ -1,0 +1,10 @@
+{
+  "name": "Voting",
+  "description": "Create votes that execute actions on behalf of token holders.",
+  "icons": [{
+    "src": "app/build/images/icon.svg",
+    "sizes": "192x192"
+  }],
+  "script": "/app/build/script.js",
+  "start_url": "/app/build/index.html"
+}
