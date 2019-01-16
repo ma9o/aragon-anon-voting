@@ -346,7 +346,8 @@ contract Voting is IForwarder, AragonApp {
     {
         Vote storage vote_ = votes[_voteId];
 
-        uint256 voterStake = 1;
+        // This could re-enter, though we can assume the governance token is not malicious
+        uint256 voterStake = token.balanceOfAt(_voter, vote_.snapshotBlock);
         VoterState state = vote_.voters[_voter];
 
         // If voter had previously voted, decrease count
