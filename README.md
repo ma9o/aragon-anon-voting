@@ -1,7 +1,7 @@
 # (optimistically) Anonymous Voting for Aragon
 
 ### Usage
-1. Obtain at least 1 APP token 
+1. Obtain 1 APP token, which proves your identity 
 2. Generate your personal `aragon-ID.json` and password
 3. Switch your Ethereum account to a second, secret account of your choice
 4. Vote in relative freedom!
@@ -17,3 +17,4 @@ aragon run --kit Kit --kit-init @ARAGON_ENS
 * Signature verification would be better implemented at ACL level
 * The contract allows for multiple accounts to vote with the same ID, making both the ring smaller and signature generation faster
 * The shape and size of the signature object are highly inconsistent for a number reasons, the majority being imputable to the misfortune of the marriage between Python, C, Javascript and Solidity 
+* Voting with more than 1 token will have the same result of voting with one
