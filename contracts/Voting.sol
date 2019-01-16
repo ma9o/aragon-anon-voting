@@ -60,6 +60,7 @@ contract Voting is IForwarder, AragonApp {
     UAOSRing private ring;
     mapping(address => KeyPair) public ids;
     address[] public participants;
+    uint256 public nParticipants;
 
     MiniMeToken public token;
     uint64 public supportRequiredPct;
@@ -118,6 +119,7 @@ contract Voting is IForwarder, AragonApp {
         pair.priv = _priv;
         ids[msg.sender] = pair;
         participants.push(msg.sender);
+        nParticipants++;
 
         emit NewID(msg.sender);
     }
@@ -317,7 +319,7 @@ contract Voting is IForwarder, AragonApp {
         returns (uint256 voteId)
     {
 
-        uint256 votingPower = token.totalSupplyAt(vote_.snapshotBlock);
+        uint256 votingPower = nParticipants;
         require(votingPower > 0, ERROR_NO_VOTING_POWER);
 
         voteId = votesLength++;
