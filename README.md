@@ -1,7 +1,7 @@
 # (optimistically) Anonymous Voting for Aragon
 
 ### Usage
-1. Obtain at least 1 identity token 
+1. Obtain at least 1 APP token 
 2. Generate your personal `aragon-ID.json` and password
 3. Switch your Ethereum account to a second, secret account of your choice
 4. Vote in relative freedom!
